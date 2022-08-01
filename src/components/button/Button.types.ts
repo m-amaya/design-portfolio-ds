@@ -3,4 +3,6 @@ import type { CommonProps } from "~/types";
 
 export interface ButtonProps
   extends CommonProps,
-    HTMLAttributes<HTMLButtonElement> {}
+    HTMLAttributes<HTMLButtonElement> {
+  kind?: "primary" | "secondary" | "icon";
+}

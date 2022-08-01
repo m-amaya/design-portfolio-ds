@@ -1,7 +1,7 @@
 {
   "breakpoints": {
     "mobile": {
-      "value": 576
+      "value": 375
     },
     "tablet": {
       "value": 768
