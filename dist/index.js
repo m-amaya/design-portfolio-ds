@@ -7,7 +7,7 @@
     Created Using:
       - React version 18.2.0
       - ReactDOM version 18.2.0
-    Built: 2022-08-01 16:34:15.522Z
+    Built: 2022-08-01 17:29:35.914Z
 */
 
 'use strict';
@@ -28,17 +28,35 @@ var breakpoints = {
 	desktop: 1440
 };
 var palette = {
+	galacticBlue: "#755CDE",
+	summerYellow: "#F6A560",
+	pink: "#F39E9E",
+	lightRed: "#EB7565",
+	cyan: "#61C4B7",
+	darkPurple: "#552049",
+	mediumBrown: "#7A746E",
+	lightCream: "#FFF7F0",
 	white: "#fff",
-	black: "#000"
+	black: "#030303"
 };
 var fonts = {
-	sansSerif: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif"
+	jakarta: "'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif"
 };
 var fontSizes = {
-	"default": 16
+	"default": 16,
+	h1: 56,
+	h2: 40,
+	h3: 32
+};
+var lineHeights = {
+	"default": 28,
+	h1: 70,
+	h2: 51,
+	h3: 40
 };
 var fontWeights = {
-	"default": 500
+	medium: 500,
+	bold: 700
 };
 var zIndex = {
 	header: 1,
@@ -50,6 +68,7 @@ var tokens = {
 	palette: palette,
 	fonts: fonts,
 	fontSizes: fontSizes,
+	lineHeights: lineHeights,
 	fontWeights: fontWeights,
 	zIndex: zIndex
 };
@@ -118,16 +137,18 @@ var styled = (_a = q({
         fonts: fonts,
         fontSizes: replace(fontSizes, "%px"),
         fontWeights: fontWeights,
+        lineHeights: replace(lineHeights, "%px"),
         zIndices: zIndex,
     },
     media: replace(breakpoints, "(min-width: %px)"),
     utils: {
         // typography
-        textStyle: function () { return ({
-            fontFamily: "$sansSerif",
-            fontSize: "$regular",
-            fontWeight: "$regular",
-            lineHeight: "1.2em",
+        textStyle: function (type) { return ({
+            color: type.search(/h/i) > -1 ? "$black" : "$mediumBrown",
+            fontFamily: "$jakarta",
+            fontSize: "$".concat(type),
+            fontWeight: type.search(/h/i) > -1 ? "$bold" : "$medium",
+            lineHeight: "$".concat(type),
         }); },
         // states
         focusRing: function (color) { return ({
@@ -171,7 +192,10 @@ var Button = function (_a) {
 };
 
 var globalStyles = globalCss({
-    "@import": ["url('https://unpkg.com/modern-css-reset/dist/reset.min.css')"],
+    "@import": [
+        "url('https://unpkg.com/modern-css-reset/dist/reset.min.css')",
+        "url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap')"
+    ],
     "*": {
         boxSizing: "border-box",
     },
