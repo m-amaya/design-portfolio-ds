@@ -1,7 +1,7 @@
 {
-  "name": "mamaya-starter-lib",
+  "name": "design-portfolio-ds",
   "version": "1.0.0",
-  "description": "Boilerplate for a TSX-React library",
+  "description": "Design system for the design portfolio Frontend Mentor challenge",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/types/index.d.ts",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/m-amaya/mamaya-starter-lib.git"
+    "url": "git+https://github.com/m-amaya/design-portfolio-ds.git"
   },
   "homepage": ".",
   "author": "Marissa Amaya <mamaya.dev@gmail.com>",
