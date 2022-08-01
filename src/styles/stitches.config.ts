@@ -1,13 +1,14 @@
 import { createStitches } from "@stitches/react";
-
 import {
   breakpoints,
   fonts,
   fontSizes,
   fontWeights,
+  lineHeights,
   palette,
   zIndex,
 } from "~/tokens/tokens.json";
+import type { FontStyleType } from "~/types";
 import rgba from "~/utils/rgba";
 
 function replace<T>(vars: T, template: string) {
@@ -36,16 +37,18 @@ export const {
     fonts,
     fontSizes: replace(fontSizes, "%px"),
     fontWeights,
+    lineHeights: replace(lineHeights, "%px"),
     zIndices: zIndex,
   },
   media: replace(breakpoints, "(min-width: %px)"),
   utils: {
     // typography
-    textStyle: () => ({
-      fontFamily: "$sansSerif",
-      fontSize: "$regular",
-      fontWeight: "$regular",
-      lineHeight: "1.2em",
+    textStyle: (type: FontStyleType) => ({
+      color: type.search(/h/i) > -1 ? "$black" : "$mediumBrown",
+      fontFamily: "$jakarta",
+      fontSize: `$${type}`,
+      fontWeight: type.search(/h/i) > -1 ? "$bold" : "$medium",
+      lineHeight: `$${type}`,
     }),
     // states
     focusRing: (color: keyof typeof palette) => ({
