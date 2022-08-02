@@ -1,6 +1,6 @@
 {
   "name": "design-portfolio-ds",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Design system for the design portfolio Frontend Mentor challenge",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
