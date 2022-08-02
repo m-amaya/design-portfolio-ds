@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/m-amaya/design-portfolio-ds.git"
   },
-  "homepage": ".",
+  "homepage": "https://m-amaya.github.io/design-portfolio-challenge/",
   "author": "Marissa Amaya <mamaya.dev@gmail.com>",
   "license": "MIT",
   "private": true,
