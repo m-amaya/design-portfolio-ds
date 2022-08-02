@@ -54,9 +54,11 @@ const Button: FC<ButtonProps> = ({
   css,
   testId,
   children,
+  ...attrs
 }) => {
   return (
     <ButtonStyled
+      {...attrs}
       kind={kind}
       className={className}
       css={css}
